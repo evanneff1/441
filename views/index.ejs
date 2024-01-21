@@ -21,9 +21,9 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      width: 40px;
+      width: 210px;
       /* Adjust as needed */
-      height: 40px;
+      height: 210px;
       /* Adjust as needed */
       border-radius: 50%;
       border: none;
@@ -34,21 +34,37 @@
     /* Optionally style each button specifically */
     #red-light {
       background-color: rgba(255, 0, 0, 0.5);
+      top: 12vh !important;
+
     }
 
     #yellow-light {
       background-color: rgba(255, 255, 0, 0.5);
+      top: 35.5vh !important;
     }
 
     #green-light {
       background-color: rgba(0, 255, 0, 0.5);
+      top: 59vh !important;
     }
 
-    .glow {
-      box-shadow: 0 0 10px 5px #fff;
-      /* Adjust color and size as needed */
+    button {
       transition: box-shadow 0.3s ease-in-out;
-      /* Smooth transition for the glow effect */
+      box-shadow: 0 0 0 0 rgba(255, 255, 0, 0);
+      /* Invisible box-shadow by default */
+    }
+
+    .greenglow {
+      box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.5);
+
+    }
+
+    .yellowglow {
+      box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.5);
+    }
+
+    .redglow {
+      box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.5);
     }
   </style>
 </head>
@@ -60,15 +76,33 @@
     <button class="light-button" id="yellow-light" style="top: 45%;"></button>
     <button class="light-button" id="green-light" style="top: 80%;"></button>
   </div>
+  <a href="/startf" id="startbutton">Start</a>
+  <a href="/stopf">Stop</a>
 </body>
 
 <script>
   function addGlowEffect(buttonId) {
     var button = document.getElementById(buttonId);
-    button.classList.add('glow');
-    setTimeout(function () {
-      button.classList.remove('glow');
-    }, 1000); // Remove the glow effect after 1 second
+    console.log(buttonId)
+    if (buttonId == 'red-light') {
+      button.classList.add('redglow')
+      setTimeout(function () {
+        button.classList.remove('redglow')
+      }, 2000);
+    }
+    else if (buttonId == 'yellow-light') {
+      button.classList.add('yellowglow')
+      setTimeout(function () {
+        button.classList.remove('yellowglow');
+      }, 2000);
+    }
+    else {
+      button.classList.add('greenglow')
+      setTimeout(function () {
+        button.classList.remove('greenglow');
+      }, 2000);
+    }
+    // Remove the glow effect after 1 second
   }
 
   document.getElementById('red-light').addEventListener('click', function () {
@@ -85,6 +119,7 @@
     window.location.href = '/green';
     addGlowEffect('green-light');
   });
+
 
 </script>
 
