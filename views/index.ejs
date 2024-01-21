@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .stoplight-container {
+      position: relative;
+      width: auto;
+      height: 90vh;
+      display: flex;
+      flex-direction: center;
+      justify-content: center;
+    }
+
+    .stoplight-container img {
+      width: auto;
+      height: 100%;
+    }
+
+    .light-button {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      /* Adjust as needed */
+      height: 40px;
+      /* Adjust as needed */
+      border-radius: 50%;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    /* Optionally style each button specifically */
+    #red-light {
+      background-color: rgba(255, 0, 0, 0.5);
+    }
+
+    #yellow-light {
+      background-color: rgba(255, 255, 0, 0.5);
+    }
+
+    #green-light {
+      background-color: rgba(0, 255, 0, 0.5);
+    }
+
+    .glow {
+      box-shadow: 0 0 10px 5px #fff;
+      /* Adjust color and size as needed */
+      transition: box-shadow 0.3s ease-in-out;
+      /* Smooth transition for the glow effect */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stoplight-container">
+    <img src="images/stoplight.png" alt="Stoplight" />
+    <button class="light-button" id="red-light" style="top: 10%;"></button>
+    <button class="light-button" id="yellow-light" style="top: 45%;"></button>
+    <button class="light-button" id="green-light" style="top: 80%;"></button>
+  </div>
+</body>
+
+<script>
+  function addGlowEffect(buttonId) {
+    var button = document.getElementById(buttonId);
+    button.classList.add('glow');
+    setTimeout(function () {
+      button.classList.remove('glow');
+    }, 1000); // Remove the glow effect after 1 second
+  }
+
+  document.getElementById('red-light').addEventListener('click', function () {
+    window.location.href = '/red';
+    addGlowEffect('red-light');
+  });
+
+  document.getElementById('yellow-light').addEventListener('click', function () {
+    window.location.href = '/yellow';
+    addGlowEffect('yellow-light');
+  });
+
+  document.getElementById('green-light').addEventListener('click', function () {
+    window.location.href = '/green';
+    addGlowEffect('green-light');
+  });
+
+</script>
+
+</html>
