@@ -66,6 +66,42 @@
     .redglow {
       box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.5);
     }
+
+    .buttondiv {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .buttondiv a:first-child {
+      background-color: rgb(92, 119, 98);
+      padding: 10px 40px;
+      margin: 10px;
+      border-radius: 15px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .buttondiv a {
+      background-color: rgb(143, 55, 55);
+      padding: 10px 40px;
+      margin: 10px;
+      border-radius: 15px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .buttondiv a:first-child:hover {
+      background-color: rgb(11, 73, 32);
+      transition: background-color 1s ease-in-out;
+    }
+
+    .buttondiv a:hover {
+      background-color: rgb(73, 11, 11);
+      transition: background-color 1s ease-in-out;
+    }
   </style>
 </head>
 
@@ -76,8 +112,10 @@
     <button class="light-button" id="yellow-light" style="top: 45%;"></button>
     <button class="light-button" id="green-light" style="top: 80%;"></button>
   </div>
-  <a href="/startf" id="startbutton">Start</a>
-  <a href="/stopf">Stop</a>
+  <div class="buttondiv">
+    <a href="/startf" id="startbutton">Start</a>
+    <a href="/stopf">Stop</a>
+  </div>
 </body>
 
 <script>
