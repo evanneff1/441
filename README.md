@@ -1,3 +1,3 @@
-# Raspberry PI Node Express Stop Light
+# Arduino Stop Light Web App
 
-Hello, this is the repo for my Node Raspberry PI Stop Light, made as an assignment for my class. Enjoy!
+Hello, this is the repo for my Arduino Stop Light Web App, made as an assignment for my class. Enjoy!
