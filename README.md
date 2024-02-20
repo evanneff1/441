@@ -1,3 +1,3 @@
-# Raspberry PI Node Express Stop Light
+# Dual Arudino Sensor Project
 
-Hello, this is the repo for my Node Raspberry PI Stop Light, made as an assignment for my class. Enjoy!
+Hello, this is the repo for my Dual Arudino Sensor Project, made as an assignment for my class. Enjoy!
